@@ -7,29 +7,34 @@
 	<link rel="stylesheet" href="courses.css">
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 	<script src="course_filter.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="vote.js" type="text/javascript" charset="utf-8" async defer></script>
 </head>
 <body>
+	<!-- Phần này dùng để lọc khóa học theo kĩ năng -->
 	<div class="listfields">
-		<a href="index.html" title="" class="field"><i class="fas fa-home"></i></a>
+		<a href="newcourses.html" title="" class="field"><i class="fas fa-home"></i></a>
 		<a href="#" title="" class="field" onclick="showAll();">All</a>
-		<a href="#" title="" class="field" onclick="showLanguage();">Language</a>
-		<a href="#" title="" class="field" onclick="showMarketing();">Marketing</a>
-		<a href="#" title="" class="field" onclick="showSocial();">Social</a>
-		<a href="#" title="" class="field" onclick="showMedicine();">Medicine</a>
-		<a href="#" title="" class="field" onclick="showComputer();">Computers</a>
+		<a href="#" title="" class="field" onclick="showWriting();">Writing Skill</a>
+		<a href="#" title="" class="field" onclick="showReading();">Reading Skill</a>
+		<a href="#" title="" class="field" onclick="showListening();">Listening Skill</a>
+		<a href="#" title="" class="field" onclick="showSpeaking();">Speaking Skill</a>
+		<a href="#" title="" class="field" onclick="showFull();">Full SKill</a>
 	</div>
+	<!-- Phần này dùng để lọc khóa học theo kĩ năng -->
+	<!-- Danh sách các khóa học copy từ file newcourses.html qua -->
+	<!-- có 1 class mở rộng đằng sau _1newcourse dùng để nhận biết lọc kĩ năng -->
 	<div class="list_courses">
-		<div class="_1newcourse Language">
+		<div class="_1newcourse Writing" id="Writing">
 			<div class="hover blueback">
 				<h4>
-					Principles of Written English, Part 2
+					Toeic: Rèn luyện kĩ năng Viết (Phần 2)
 				</h4>
 				<p>
-					Nam id leo massa. Cras at condimentum nisi, vulputate ultrices turpis.
+					Nâng cao kĩ năng với các câu hỏi từ câu 6 đến câu 8 trong format đề với hơn nhiều dạng, bài tập mới được cập nhật mỗi ngày, học viên có thể ngưng khóa học bất cứ lúc nào.
 				</p>
 				<div class="sel">
-					<a href="paid_courses.html" title="" class="learnmore">Learn more</a>
-					<a href="" title="" class="buynow">Buy Now</a>
+					<a href="paid_courses.html" title="" class="learnmore" onclick="setWriting()">Tìm hiểu thêm</a>
+					<a href="buycourse.html" title="" class="buynow" onclick="buyCourse('Toeic: Rèn luyện kĩ năng Viết (Phần 2)','235.000đ', 'tháng')">Mua ngay</a>
 				</div>
 			</div>
 			<div class="unhover">
@@ -38,28 +43,33 @@
 				</div>
 				<div class="namecourse blueback">	
 					<h4>
-							Principles of Written English, Part 2
+						Toeic: Rèn luyện kĩ năng Viết (Phần 2)
 					</h4>
 				</div>
 				<div class="overview">
-					<p class="type blue">Language</p>
-					<p class="cost">$85 <label class="period">/ monthly</label>
+					<p class="type blue">Writing Skill</p>
+					<p class="cost">235.000đ <label class="period">/ tháng</label>
 					</p>	
 				</div>
 			</div>
 		</div>
 		<!-- finish 1 course -->
-		<div class="_1newcourse Marketing">
+		<div class="_1newcourse Full" id="Full">
 			<div class="hover greenback">
 				<h4>
-					Entrepreneurship 101:<br>Who is your customer?
+					Khóa học Toeic Full 4 kĩ năng (EL1205)
 				</h4>
 				<p>
-					Quisque a nulla eget ante vestibulum lacinia eu quis massa.
+					Khóa học kéo dài 6 tháng. 4 tháng đầu học viên sẽ được rèn luyện 2 kĩ năng Reading và Listening, 2 tháng còn lại 
+					sẽ học 2 kĩ năng Speaking và Writing. Chuẩn đầu ra sẽ được đảm bảo như sau: <br>
+					Reading + Listening: 550+ <br>
+					Speaking + Writing: 200+ <br>
+					Thời gian học: 19h - 21h thứ 3,5,7 mỗi tuần. <br>
+					Thời hạn đăng kí: Đến hết 25/12/2021.
 				</p>
 				<div class="sel">
-					<a href="paid_courses.html" title="" class="learnmore">Learn more</a>
-					<a href="" title="" class="buynow">Buy Now</a>
+					<a href="paid_courses.html" title="" class="learnmore" onclick="setFull()">Tìm hiểu thêm</a>
+					<a href="buycourse.html" title="" class="buynow" onclick="buyCourse('Khóa học Toeic Full 4 kĩ năng (EL1205)','5.400.000đ', 'none')">Mua ngay</a>
 				</div>
 			</div>
 			<div class="unhover">
@@ -68,28 +78,33 @@
 				</div>
 				<div class="namecourse greenback">	
 					<h4>
-						Entrepreneurship 101:<br>Who is your customer?
+						Khóa học Toeic Full 4 kĩ năng (EL1205)
 					</h4>
 				</div>
 				<div class="overview">
-					<p class="type green">Marketing</p>
-					<p class="cost">$195 <label class="period">/ monthly</label>
+					<p class="type green">Full Skill</p>
+					<p class="cost">5.400.000đ <label class="period"></label>
 					</p>	
 				</div>
 			</div>
 		</div>
 		<!-- finish 1 course -->
-		<div class="_1newcourse Social">
+		<div class="_1newcourse Full" id="Full">
 			<div class="hover yellowback">
 				<h4>
-					Evaluating Social<br>Programs
+					Khóa học Toeic Full 4 kĩ năng (EL1206)
 				</h4>
 				<p>
-					Nunc finibus vestibulum dui a fringilla. Maecenas maximus in massa sit amet maximus.
+					Khóa học kéo dài 6 tháng. 4 tháng đầu học viên sẽ được rèn luyện 2 kĩ năng Reading và Listening, 2 tháng còn lại 
+					sẽ học 2 kĩ năng Speaking và Writing. Chuẩn đầu ra sẽ được đảm bảo như sau: <br>
+					Reading + Listening: 550+ <br>
+					Speaking + Writing: 200+ <br>
+					Thời gian học: 19h - 21h thứ 2,4,6 mỗi tuần. <br>
+					Thời hạn đăng kí: Đến hết 25/12/2021.
 				</p>
 				<div class="sel">
-					<a href="paid_courses.html" title="" class="learnmore">Learn more</a>
-					<a href="" title="" class="buynow">Buy Now</a>
+					<a href="paid_courses.html" title="" class="learnmore" onclick="setFull()">Tìm hiểu thêm</a>
+					<a href="buycourse.html" title="" class="buynow" onclick="buyCourse('Khóa học Toeic Full 4 kĩ năng (EL1206)','5.400.000đ','none')">Mua ngay</a>
 				</div>
 			</div>
 			<div class="unhover">
@@ -98,28 +113,28 @@
 				</div>
 				<div class="namecourse yellowback">	
 					<h4>
-						Evaluating Social<br>Programs
+						Khóa học Toeic Full 4 kĩ năng (EL1206)
 					</h4>
 				</div>
 				<div class="overview">
-					<p class="type yellow">Social</p>
-					<p class="cost">Free <label class="period"></label>
+					<p class="type yellow">Full Skill</p>
+					<p class="cost">5.400.000 <label class="period"></label>
 					</p>	
 				</div>
 			</div>
 		</div>
 		<!-- finish 1 course -->
-		<div class="_1newcourse Language">
+		<div class="_1newcourse Writing" id="Writing">
 			<div class="hover greenback">
 				<h4>
-					Principles of Written English, Part 1
+					Toeic: Rèn luyện kĩ năng Viết (Phần 1)
 				</h4>
 				<p>
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					Rèn luyện khả năng làm các câu hỏi từ câu 1 đến câu 5 với hơn 200 dạng đề khác nhau, học viên có thể ngưng khóa học bất cứ lúc nào.
 				</p>
 				<div class="sel">
-					<a href="paid_courses.html" title="" class="learnmore">Learn more</a>
-					<a href="" title="" class="buynow">Buy Now</a>
+					<a href="paid_courses.html" title="" class="learnmore" onclick="setWriting()">Tìm hiểu thêm</a>
+					<a href="buycourse.html" title="" class="buynow" onclick="buyCourse('Toeic: Rèn luyện kĩ năng Viết (Phần 1)','235.000đ','tháng')">Mua ngay</a>
 				</div>
 			</div>
 			<div class="unhover">
@@ -128,28 +143,30 @@
 				</div>
 				<div class="namecourse greenback">	
 					<h4>
-						Principles of Written English, Part 1
+						Toeic: Rèn luyện kĩ năng Viết (Phần 1)
 					</h4>
 				</div>
 				<div class="overview">
-					<p class="type green">Language</p>
-					<p class="cost">$85 <label class="period">/ monthly</label>
+					<p class="type green">Writing Skill</p>
+					<p class="cost">235.000đ <label class="period">/ tháng</label>
 					</p>	
 				</div>
 			</div>
 		</div>
 		<!-- finish 1 course -->
-		<div class="_1newcourse Medicine">
+		<div class="_1newcourse Reading" id="Reading">
 			<div class="hover yellowback">
 				<h4>
-					Introduction to<br>Biomedical Imaging
+					Toeic: Khóa học Reading cơ bản
 				</h4>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit
+					Nội dung xoay quanh 2 phần Part 5 và Part 6 của đề thi Reading thực tế với độ khó từ dễ tới mức trung bình. Thích hợp cho 
+					những bạn có kiến thức nền chưa vững. Bạn sẽ có khả năng quét "key-word" nhanh hơn, rút ngắn thời gian để tập trung cho phần khó hơn. Với số lượng câu hỏi được các trợ giảng cập nhật đều đặn mỗi tuần và các bạn có thể ngưng khóa học 
+					bất cứ khi nào cảm thấy đã đủ kiến thức.
 				</p>
 				<div class="sel">
-					<a href="paid_courses.html" title="" class="learnmore">Learn more</a>
-					<a href="" title="" class="buynow">Buy Now</a>
+					<a href="paid_courses.html" title="" class="learnmore" onclick="setReading()">Tìm hiểu thêm</a>
+					<a href="buycourse.html" title="" class="buynow" onclick="buyCourse('Toeic: Khóa học Reading cơ bản','300.000đ', 'tháng')">Mua ngay</a>
 				</div>
 			</div>
 			<div class="unhover">
@@ -158,28 +175,30 @@
 				</div>
 				<div class="namecourse yellowback">	
 					<h4>
-						Introduction to<br>Biomedical Imaging
+						Toeic: Khóa học Reading cơ bản
 					</h4>
 				</div>
 				<div class="overview">
-					<p class="type yellow">Medicine</p>
-					<p class="cost">$400 <label class="period"></label>
+					<p class="type yellow">Reading Skill</p>
+					<p class="cost">300.000đ <label class="period"> / tháng</label>
 					</p>	
 				</div>
 			</div>
 		</div>
 		<!-- finish 1 course -->
-		<div class="_1newcourse Computer">
+		<div class="_1newcourse Reading" id="Reading">
 			<div class="hover blueback">
 				<h4>
-					Introduction to<br>Computer Science
+					Toeic: Khóa học Reading nâng cao
 				</h4>
 				<p>
-					Sed interdum felis diam, vitae rutrum urna laoreet vehicula.
+					Nội dung xoay quanh Part 7 là phần khó nhất của đề thi Reading. Thích hợp cho 
+					những bạn đã có kiến thức nền. Khóa học sẽ tập trung vào các kĩ năng như lọc đáp án nhiễu, kĩ năng tìm kiếm thông tin, tránh phải đọc hết đoạn văn. Với số lượng câu hỏi được các trợ giảng cập nhật đều đặn mỗi tuần và các bạn có thể ngưng khóa học 
+					bất cứ khi nào cảm thấy đã đủ kiến thức.
 				</p>
 				<div class="sel">
-					<a href="paid_courses.html" title="" class="learnmore">Learn more</a>
-					<a href="" title="" class="buynow">Buy Now</a>
+					<a href="paid_courses.html" title="" class="learnmore" onclick="setReading()">Tìm hiểu thêm</a>
+					<a href="buycourse.html" title="" class="buynow" onclick="buyCourse('Toeic: Khóa học Reading nâng cao', '300.000đ','tháng')">Mua ngay</a>
 				</div>
 			</div>
 			<div class="unhover">
@@ -188,12 +207,12 @@
 				</div>
 				<div class="namecourse blueback">	
 					<h4>
-						Introduction to<br>Computer Science
+						Toeic: Khóa học Reading nâng cao
 					</h4>
 				</div>
 				<div class="overview">
-					<p class="type blue">Computer</p>
-					<p class="cost">$120 <label class="period">/ monthly</label>
+					<p class="type blue">Reading Skill</p>
+					<p class="cost">300.000đ <label class="period">/ tháng</label>
 					</p>	
 				</div>
 			</div>

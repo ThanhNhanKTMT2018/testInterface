@@ -1,3 +1,4 @@
+//setup các thanh kéo phần đánh giá khóa học của file paid_courses.html
 function changeTutorial(){
 	var slider = document.getElementById("tutorial");
 	var output = document.getElementById("val_tutorial");
@@ -30,6 +31,10 @@ function changePrice(){
 	slider.style.background = color;
 	recount();
 }
+//setup các thanh kéo phần đánh giá khóa học của file paid_courses.html
+
+
+//Tính % trung bình đánh giá khóa học của file paid_courses.html
 function recount(){
 	var slider1 = document.getElementById("tutorial");
 	var slider2 = document.getElementById("training");
@@ -38,3 +43,37 @@ function recount(){
 	var output = document.getElementById("percent");
 	output.innerHTML = parseInt((parseInt(slider1.value) + parseInt(slider2.value) + parseInt(slider3.value) + parseInt(slider4.value))/4) + '%';
 }
+//Tính % trung bình đánh giá khóa học của file paid_courses.html
+
+
+//Set kĩ năng file paid_courses.html (thẻ h3)
+function setUp(){
+	var x = document.getElementById("field_name");
+	x.innerHTML = localStorage.getItem("fieldName");
+}
+function setWriting(){
+	localStorage.setItem("fieldName", "Writing Skill");
+	return true;
+}
+function setReading(){
+	localStorage.setItem("fieldName", "Reading Skill");
+	return true;
+}
+function setSpeaking(){
+	localStorage.setItem("fieldName", "Speaking Skill");
+	return true;
+}
+function setListening(){
+	localStorage.setItem("fieldName", "Listening Skill");
+	return true;
+}
+function setFull(){
+	localStorage.setItem("fieldName", "Full Skill");
+	return true;
+}
+function buyCourse(x,y,z){
+	localStorage.setItem("course_name_buy", x.toString());
+	localStorage.setItem("sum", y.toString());
+	localStorage.setItem("period", z.toString());
+}
+//Set kĩ năng file paid_courses.html (thẻ h3)
