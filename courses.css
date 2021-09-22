@@ -132,13 +132,15 @@ a.view_all{
 	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
 	padding-left: 20px;
+	padding-right: 20px;
 	padding-top: 30px;
 }
 ._1newcourse:hover .hover p{
 	height: 150px;
-	font-size: 15px;
+	font-size: 13.5px;
 	font-family: 'Roboto', sans-serif;
 	padding-left: 20px;
+	padding-right: 20px;
 	padding-top: 10px;
 }
 ._1newcourse:hover .hover .sel{

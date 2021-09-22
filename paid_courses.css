@@ -118,6 +118,13 @@ i{
 	font-family: 'Roboto', sans-serif;
 	color: #666666;
 }
+.info_course p{
+	padding-right: 70px;
+}
+.info_course em{
+	padding-right: 70px;
+	display: block;
+}
 .chart{
 	flex: 1;
 }
@@ -215,7 +222,7 @@ i{
 	list-style: none;
 }
 .plan p{
-	padding-right: 20px;
+	padding-right: 70px;
 }
 .plan i{
 	color: #1EAACE;
